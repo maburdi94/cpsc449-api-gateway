@@ -80,7 +80,6 @@ def getPosts(db):
     q = request.query
 
     user = q.get('user')
-    # all = q.get('all')
 
     page = int(q['page']) if q.get('page') else 0
 

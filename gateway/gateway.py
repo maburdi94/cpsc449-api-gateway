@@ -11,6 +11,7 @@ import logging.config
 
 import bottle
 from bottle import get, route, request, response
+from operator import itemgetter
 
 import requests
 
@@ -76,14 +77,21 @@ if not sys.warnoptions:
 @get('/home/<username>')
 def getHomeTimeline(username):
 
-    user = requests.get(f'http://localhost:5100/users?user={username}').json()
+    upstream_servers = json_config('proxy.upstreams')
+    TIMELINE_API, USERS_API = itemgetter('timeline','users')(upstream_servers)
 
-    for user in user.following:
-        user = requests.get(f'http://localhost:5200/timeline?timeline={username}').json()
+    user = requests.get(f'{USERS_API}?user={username}').json()
 
-    print(users)
+    following = user['following']
 
-    return {}
+    posts = []
+
+    username for user in following:
+        username = user['username']
+        timeline = requests.get(f'{TIMELINE_API}/posts?user={username}').json()
+        posts += timeline['posts']
+
+    return {'posts' : posts}
 
 
 
