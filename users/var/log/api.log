@@ -1,0 +1,84 @@
+[2021-03-02 19:20:00,025] DEBUG in root: SELECT * FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:20:15,905] DEBUG in root: SELECT * FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:21:37,887] DEBUG in root: SELECT * FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:24:25,567] DEBUG in root: SELECT * FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:31:21,218] DEBUG in root: SELECT * FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:31:33,606] DEBUG in root: SELECT * FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:35:22,939] DEBUG in root: SELECT username,email,password,follows FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:35:42,887] DEBUG in root: SELECT id,username,email,password,follows FROM users JOIN following ON users.id = following.follower
+[2021-03-02 19:39:12,326] DEBUG in root: SELECT id,username,email,password,follows
+             FROM users JOIN following ON users.id = following.follower
+[2021-03-05 09:06:26,513] DEBUG in root: SELECT C.id as id,username,email,password,D.follower as follower FROM
+            (SELECT *
+                FROM users
+                JOIN following ON id = follower) C
+             JOIN (SELECT id,username as follower FROM users) D
+             ON D.id = follows
+             ORDER BY id
+[2021-03-05 09:48:14,913] DEBUG in root: SELECT * from users
+[2021-03-05 09:50:43,002] DEBUG in root: SELECT * from users
+[2021-03-05 09:50:43,002] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 1)
+[2021-03-05 09:50:43,003] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 2)
+[2021-03-05 09:50:43,003] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 3)
+[2021-03-05 09:50:43,004] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 4)
+[2021-03-05 09:50:43,004] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 5)
+[2021-03-05 09:50:43,004] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 6)
+[2021-03-05 09:50:43,005] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 7)
+[2021-03-05 09:50:43,005] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 8)
+[2021-03-05 09:50:43,006] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 9)
+[2021-03-05 09:50:43,007] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 10)
+[2021-03-05 09:55:14,917] DEBUG in root: SELECT * from users
+[2021-03-05 09:55:14,918] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 1)
+[2021-03-05 09:55:14,918] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 2)
+[2021-03-05 09:55:14,918] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 3)
+[2021-03-05 09:55:14,919] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 4)
+[2021-03-05 09:55:14,919] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 5)
+[2021-03-05 09:55:14,919] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 6)
+[2021-03-05 09:55:14,920] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 7)
+[2021-03-05 09:55:14,921] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 8)
+[2021-03-05 09:55:14,922] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 9)
+[2021-03-05 09:55:14,923] DEBUG in root: SELECT * from users WHERE id IN (SELECT follows FROM following WHERE follower = 10)
+[2021-03-05 09:56:22,910] DEBUG in root: SELECT * from users
+[2021-03-05 09:56:22,911] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 1)
+[2021-03-05 09:56:22,911] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 2)
+[2021-03-05 09:56:22,911] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 3)
+[2021-03-05 09:56:22,911] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 4)
+[2021-03-05 09:56:22,912] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 5)
+[2021-03-05 09:56:22,912] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 6)
+[2021-03-05 09:56:22,916] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 7)
+[2021-03-05 09:56:22,917] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 8)
+[2021-03-05 09:56:22,918] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 9)
+[2021-03-05 09:56:22,919] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 10)
+[2021-03-05 12:17:34,308] DEBUG in root: SELECT * from users
+[2021-03-05 12:17:34,309] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 1)
+[2021-03-05 12:17:34,309] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 2)
+[2021-03-05 12:17:34,309] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 3)
+[2021-03-05 12:17:34,309] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 4)
+[2021-03-05 12:17:34,310] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 5)
+[2021-03-05 12:17:34,310] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 6)
+[2021-03-05 12:17:34,310] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 7)
+[2021-03-05 12:17:34,310] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 8)
+[2021-03-05 12:17:34,311] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 9)
+[2021-03-05 12:17:34,311] DEBUG in root: SELECT id,username from users WHERE id IN (SELECT follows FROM following WHERE follower = 10)
+[2021-03-05 14:27:35,865] DEBUG in root: INSERT INTO following (follows, follower) VALUES ('cfidal4', 'hbuckland6')
+[2021-03-05 14:31:59,927] DEBUG in root: INSERT INTO following (follows, follower) VALUES (5, 7)
+[2021-03-10 18:31:29,973] DEBUG in root: INSERT INTO following (follows, follower)
+                VALUES (SELECT id FROM users WHERE username = 'hbuckland6',
+                SELECT id FROM users WHERE username = 'jmansford1')
+[2021-03-10 18:32:06,948] DEBUG in root: INSERT INTO following (follows, follower)
+                VALUES ((SELECT id FROM users WHERE username = 'hbuckland6'),
+                (SELECT id FROM users WHERE username = 'jmansford1'))
+[2021-03-10 18:36:04,877] DEBUG in root: DELETE FROM following
+                WHERE follows = (SELECT id FROM users WHERE username = 'hbuckland6')
+                AND follower = (SELECT id FROM users WHERE username = 'jmansford1')
+[2021-03-10 18:55:22,981] DEBUG in root: DELETE FROM following
+                WHERE follows = (SELECT id FROM users WHERE username = 'hbuckland6')
+                AND follower = (SELECT id FROM users WHERE username = 'jmansford2')
+[2021-03-11 07:33:34,505] DEBUG in root: DELETE FROM following
+                WHERE follows = (SELECT id FROM users WHERE username = ?)
+                AND follower = (SELECT id FROM users WHERE username = ?)
+[2021-03-11 07:37:55,724] DEBUG in root: SELECT password FROM users WHERE username = ?
+[2021-03-11 07:38:50,975] DEBUG in root: SELECT password FROM users WHERE username = ?
+[2021-03-11 07:38:57,356] DEBUG in root: SELECT password FROM users WHERE username = ?
+[2021-03-11 08:36:07,866] DEBUG in root: SELECT password FROM users WHERE username = ?
+[2021-04-05 18:06:47,758] DEBUG in root: SELECT * from users WHERE username = ?
