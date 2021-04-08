@@ -143,6 +143,7 @@ def getUsers(db):
         sql += ' WHERE username = ?'
         bind += (user,)
 
+
     users = query(db, sql, bind)
 
     for user in users:
@@ -153,8 +154,4 @@ def getUsers(db):
         )'''
         user['following'] = query(db, sql, (id,))
 
-
-    print(users[0])
-
-
-    return users[0] if user else {'users': users}
+    return users[0] if request.query.user else {'users': users}

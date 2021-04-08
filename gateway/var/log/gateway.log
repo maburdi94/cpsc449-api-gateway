@@ -64,3 +64,9 @@ Traceback (most recent call last):
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5200): Max retries exceeded with url: /users (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc5b76734f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
 [2021-04-05 17:30:14,364] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 19:56:21,625] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 19:57:37,655] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 20:00:28,545] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 20:02:46,618] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 20:04:25,879] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 20:05:30,209] DEBUG in root: Upstream URL: http://localhost:5100/users

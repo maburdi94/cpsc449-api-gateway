@@ -76,9 +76,10 @@ if not sys.warnoptions:
 @get('/home/<username>')
 def getHomeTimeline(username):
 
-    response = requests.get(f'http://localhost:5100/users?user={username}').json()
-    users = response.users
+    user = requests.get(f'http://localhost:5100/users?user={username}').json()
 
+    for user in user.following:
+        user = requests.get(f'http://localhost:5200/timeline?timeline={username}').json()
 
     print(users)
 
@@ -94,7 +95,7 @@ def gateway(url):
     path = request.urlparts._replace(scheme='', netloc='').geturl()
 
     upstream_servers = json_config('proxy.upstreams')
-    upstream_server = upstream_servers[0]
+    upstream_server = upstream_servers[path]
 
     upstream_url = upstream_server + path
     logging.debug('Upstream URL: %s', upstream_url)
