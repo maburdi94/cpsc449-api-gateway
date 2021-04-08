@@ -94,10 +94,13 @@ def gateway(url):
 
     path = request.urlparts._replace(scheme='', netloc='').geturl()
 
-    upstream_servers = json_config('proxy.upstreams')
-    upstream_server = upstream_servers[path]
+    prefix, *path = path[1:].split('/', 1)
+    path = path[0] if path else ''
 
-    upstream_url = upstream_server + path
+    upstream_servers = json_config('proxy.upstreams')
+    upstream_server = upstream_servers[prefix]
+
+    upstream_url = f'{upstream_server}/{path}'
     logging.debug('Upstream URL: %s', upstream_url)
 
     headers = {}

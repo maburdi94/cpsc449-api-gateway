@@ -70,3 +70,11 @@ requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5
 [2021-04-07 20:02:46,618] DEBUG in root: Upstream URL: http://localhost:5100/users
 [2021-04-07 20:04:25,879] DEBUG in root: Upstream URL: http://localhost:5100/users
 [2021-04-07 20:05:30,209] DEBUG in root: Upstream URL: http://localhost:5100/users
+[2021-04-07 20:12:17,808] DEBUG in root: Upstream URL: http://localhost:5200/timeline
+[2021-04-07 20:31:24,955] DEBUG in root: Upstream URL: http://localhost:5200/cfreen0
+[2021-04-07 20:35:31,765] DEBUG in root: Upstream URL: http://localhost:5100/
+[2021-04-07 20:35:34,966] DEBUG in root: Upstream URL: http://localhost:5200/['cfreen0']
+[2021-04-07 20:36:19,109] DEBUG in root: Upstream URL: http://localhost:5200/cfreen0
+[2021-04-07 20:37:14,405] DEBUG in root: Upstream URL: http://localhost:5100/
+[2021-04-07 20:37:16,149] DEBUG in root: Upstream URL: http://localhost:5200/cfreen0
+[2021-04-07 20:37:18,111] DEBUG in root: Upstream URL: http://localhost:5100/

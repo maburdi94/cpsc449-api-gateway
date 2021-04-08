@@ -97,7 +97,7 @@ def getPosts(db):
     return {'posts': posts}
 
 
-@get('/timeline/<username>')
+@get('/<username>')
 def getUserHomeTimeline(username, db):
 
     q = request.query

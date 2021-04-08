@@ -74,7 +74,7 @@ def execute(db, sql, args=()):
 
 # Routes
 
-@post('/users')
+@post('/')
 def createUser(db):
     data = request.json
 
@@ -93,7 +93,7 @@ def createUser(db):
         return 'true'
 
 
-@route('/users/<username>/verify', method='POST')
+@route('/<username>/verify', method='POST')
 def checkPassword(username, db):
     data = request.json
 
@@ -109,7 +109,7 @@ def checkPassword(username, db):
 
 
 
-@route('/users/<usernameToFollow>/follow/<username>', method='POST')
+@route('/<usernameToFollow>/follow/<username>', method='POST')
 def addFollower(username, usernameToFollow, db):
 
     sql = '''INSERT INTO following (follows, follower)
@@ -120,7 +120,7 @@ def addFollower(username, usernameToFollow, db):
 
 
 
-@route('/users/<usernameToUnfollow>/follow/<username>', method='DELETE')
+@route('/<usernameToUnfollow>/follow/<username>', method='DELETE')
 def removeFollower(username, usernameToUnfollow, db):
 
     sql = '''DELETE FROM following
@@ -131,7 +131,7 @@ def removeFollower(username, usernameToUnfollow, db):
 
 
 
-@get('/users')
+@get('/')
 def getUsers(db):
 
     user = request.query.user or None
@@ -142,7 +142,6 @@ def getUsers(db):
     if user:
         sql += ' WHERE username = ?'
         bind += (user,)
-
 
     users = query(db, sql, bind)
 
